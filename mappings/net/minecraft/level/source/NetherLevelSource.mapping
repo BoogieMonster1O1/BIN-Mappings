@@ -1,5 +1,15 @@
 CLASS net/minecraft/class_359 net/minecraft/level/source/NetherLevelSource
+	FIELD field_1337 biomeNoise Lnet/minecraft/class_209;
+	FIELD field_1338 depthNoise Lnet/minecraft/class_209;
 	FIELD field_1344 rand Ljava/util/Random;
+	FIELD field_1345 upperInterpolationNoise Lnet/minecraft/class_209;
+	FIELD field_1346 lowerInterpolationNoise Lnet/minecraft/class_209;
+	FIELD field_1347 interpolationNoise Lnet/minecraft/class_209;
+	FIELD field_1348 beachNoise Lnet/minecraft/class_209;
+	FIELD field_1349 surfaceDepthNoise Lnet/minecraft/class_209;
 	FIELD field_1350 level Lnet/minecraft/class_18;
+	METHOD <init> (Lnet/minecraft/class_18;J)V
+		ARG 1 level
+		ARG 2 seed
 	METHOD method_1180 generate (II[B)V
 	METHOD method_1182 generateExtras (II[B)V

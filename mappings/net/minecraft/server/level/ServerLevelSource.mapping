@@ -5,7 +5,17 @@ CLASS net/minecraft/class_79 net/minecraft/server/level/ServerLevelSource
 	FIELD field_937 chunkIO Lnet/minecraft/class_243;
 	FIELD field_938 chunks Ljava/util/Map;
 	FIELD field_940 level Lnet/minecraft/class_73;
+	METHOD <init> (Lnet/minecraft/class_73;Lnet/minecraft/class_243;Lnet/minecraft/class_51;)V
+		ARG 1 level
+		ARG 2 chunkId
+		ARG 3 parent
+	METHOD method_848 doNothing (Lnet/minecraft/class_43;)V
+		ARG 1 chunk
 	METHOD method_849 saveChunk (Lnet/minecraft/class_43;)V
+		ARG 1 chunk
 	METHOD method_850 addChunkPosition (II)V
 		ARG 1 x
 		ARG 2 z
+	METHOD method_851 getAndLoadChunk (II)Lnet/minecraft/class_43;
+		ARG 1 chunkX
+		ARG 2 chunkZ

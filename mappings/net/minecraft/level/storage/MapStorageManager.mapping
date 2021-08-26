@@ -1,0 +1,16 @@
+CLASS net/minecraft/class_53 net/minecraft/level/storage/MapStorageManager
+	FIELD field_550 dimensionData Lnet/minecraft/class_52;
+	FIELD field_551 idMap Ljava/util/Map;
+	FIELD field_552 mapStorageList Ljava/util/List;
+	METHOD <init> (Lnet/minecraft/class_52;)V
+		ARG 1 data
+	METHOD method_523 saveAll ()V
+	METHOD method_524 save (Lnet/minecraft/class_58;)V
+		ARG 1 mapStorageBase
+	METHOD method_525 getOrCreate (Ljava/lang/Class;Ljava/lang/String;)Lnet/minecraft/class_58;
+		ARG 1 clazz
+		ARG 2 id
+	METHOD method_526 getIntId (Ljava/lang/String;)I
+	METHOD method_527 set (Ljava/lang/String;Lnet/minecraft/class_58;)V
+		ARG 1 id
+		ARG 2 mapStorage

@@ -1,1 +1,11 @@
 CLASS net/minecraft/class_208 net/minecraft/level/source/SkylandsLevelSource
+	FIELD field_761 biomeNoise Lnet/minecraft/class_209;
+	FIELD field_762 depthNoise Lnet/minecraft/class_209;
+	FIELD field_770 rand Ljava/util/Random;
+	FIELD field_771 upperInterpolationNoise Lnet/minecraft/class_209;
+	FIELD field_772 lowerInterpolationNoise Lnet/minecraft/class_209;
+	FIELD field_773 interpolationNoise Lnet/minecraft/class_209;
+	FIELD field_776 level Lnet/minecraft/class_18;
+	METHOD <init> (Lnet/minecraft/class_18;J)V
+		ARG 1 level
+		ARG 2 seed

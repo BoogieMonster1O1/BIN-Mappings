@@ -1,1 +1,7 @@
 CLASS net/minecraft/class_125 net/minecraft/item/Map
+	METHOD method_1730 getMapData (Lnet/minecraft/class_31;Lnet/minecraft/class_18;)Lnet/minecraft/class_198;
+		ARG 1 item
+		ARG 2 level
+	METHOD method_1731 getMapData (SLnet/minecraft/class_18;)Lnet/minecraft/class_198;
+		ARG 0 id
+		ARG 1 level

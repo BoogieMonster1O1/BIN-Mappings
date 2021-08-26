@@ -20,6 +20,7 @@ CLASS net/minecraft/class_18 net/minecraft/level/Level
 	FIELD field_218 cache Lnet/minecraft/class_51;
 	FIELD field_219 dimensionData Lnet/minecraft/class_52;
 	FIELD field_220 properties Lnet/minecraft/class_7;
+	FIELD field_222 mapStorageManager Lnet/minecraft/class_53;
 	METHOD <init> (Lnet/minecraft/class_18;Lnet/minecraft/class_50;)V
 		ARG 1 level
 		ARG 2 dimension
@@ -38,6 +39,10 @@ CLASS net/minecraft/class_18 net/minecraft/level/Level
 		ARG 5 posZ
 		ARG 7 maxDistance
 	METHOD method_150 playSound (DDDLjava/lang/String;FF)V
+		ARG 1 x
+		ARG 3 y
+		ARG 5 z
+		ARG 7 name
 	METHOD method_152 getTopBlockAboveSeaLevel (II)I
 		ARG 1 x
 		ARG 2 z
@@ -63,21 +68,45 @@ CLASS net/minecraft/class_18 net/minecraft/level/Level
 		ARG 3 z
 	METHOD method_159 setLevelTime (J)V
 		ARG 1 newTime
+	METHOD method_164 getLight (Lnet/minecraft/class_56;III)I
+		ARG 1 lightType
+		ARG 2 x
+		ARG 3 y
+		ARG 4 z
 	METHOD method_165 (Lnet/minecraft/class_56;IIII)V
 		ARG 2 x
 		ARG 3 y
 		ARG 4 z
+	METHOD method_166 (Lnet/minecraft/class_56;IIIIII)V
+		ARG 1 lightType
+	METHOD method_167 (Lnet/minecraft/class_56;IIIIIIZ)V
+		ARG 1 lightType
 	METHOD method_168 canSpawnEntity (Lnet/minecraft/class_25;)Z
 		ARG 1 box
 	METHOD method_172 (Lnet/minecraft/class_54;IIII)V
+		ARG 1 player
 		ARG 2 x
 		ARG 3 y
 		ARG 4 z
 	METHOD method_173 playLevelEvent (Lnet/minecraft/class_54;IIIII)V
 	METHOD method_175 getEntities (Ljava/lang/Class;Lnet/minecraft/class_25;)Ljava/util/List;
+	METHOD method_176 getOrCreateMapStorage (Ljava/lang/Class;Ljava/lang/String;)Lnet/minecraft/class_58;
+		ARG 1 clazz
+		ARG 2 id
 	METHOD method_177 getPlayerByName (Ljava/lang/String;)Lnet/minecraft/class_54;
 		ARG 1 name
 	METHOD method_178 addParticle (Ljava/lang/String;DDDDDD)V
+		ARG 1 name
+		ARG 2 x
+		ARG 4 y
+		ARG 6 z
+		ARG 8 velocityX
+		ARG 10 velocityY
+		ARG 12 velocityZ
+	METHOD method_180 setMapStorage (Ljava/lang/String;Lnet/minecraft/class_58;)V
+		ARG 1 id
+	METHOD method_181 addTileEntities (Ljava/util/Collection;)V
+		ARG 1 tileEntities
 	METHOD method_182 addEntities (Ljava/util/List;)V
 		ARG 1 newEntities
 	METHOD method_183 addLevelListener (Lnet/minecraft/class_59;)V
@@ -97,10 +126,15 @@ CLASS net/minecraft/class_18 net/minecraft/level/Level
 		ARG 6 z
 		ARG 8 power
 		ARG 9 causeFires
+	METHOD method_190 (Lnet/minecraft/class_57;Lnet/minecraft/class_25;)Ljava/util/List;
+		ARG 1 entity
+		ARG 2 box
 	METHOD method_191 playSound (Lnet/minecraft/class_57;Ljava/lang/String;FF)V
 	METHOD method_195 saveLevel (ZLnet/minecraft/class_62;)V
 		ARG 2 listener
 	METHOD method_197 getChunkCache ()Lnet/minecraft/class_51;
+	METHOD method_198 getSunPosition (F)F
+		ARG 1 delta
 	METHOD method_199 getChunk (II)Lnet/minecraft/class_43;
 		ARG 1 x
 		ARG 2 z
@@ -118,6 +152,10 @@ CLASS net/minecraft/class_18 net/minecraft/level/Level
 		ARG 2 x
 		ARG 3 y
 		ARG 4 z
+		ARG 5 valye
+	METHOD method_208 getMapStorageId (Ljava/lang/String;)I
+		COMMENT Returns the integer id for a String map storage id
+		ARG 1 id
 	METHOD method_209 (Ljava/util/List;)V
 		ARG 1 newList
 	METHOD method_210 spawnEntity (Lnet/minecraft/class_57;)Z
@@ -147,6 +185,7 @@ CLASS net/minecraft/class_18 net/minecraft/level/Level
 		ARG 1 x
 		ARG 2 y
 		ARG 3 z
+	METHOD method_227 tick ()V
 	METHOD method_228 (II)I
 		ARG 1 x
 		ARG 2 z
@@ -233,9 +272,14 @@ CLASS net/minecraft/class_18 net/minecraft/level/Level
 	METHOD method_276 setSpawnPosition (Lnet/minecraft/class_63;)V
 	METHOD method_277 addPlayer (Lnet/minecraft/class_54;)V
 		ARG 1 player
+	METHOD method_279 (Lnet/minecraft/class_57;F)Lnet/minecraft/class_26;
+		ARG 1 entity
+		ARG 2 delta
 	METHOD method_280 saveLevel (Lnet/minecraft/class_62;)V
 	METHOD method_281 removeLevelListener (Lnet/minecraft/class_59;)V
 		ARG 1 levelListener
+	METHOD method_284 getSkyColor (F)Lnet/minecraft/class_26;
+		ARG 1 delta
 	METHOD method_289 setRainGradient (F)V
 		ARG 1 gradient
 	METHOD method_291 getEntities ()Ljava/util/List;
